@@ -1,6 +1,4 @@
-// This example code is in the Public Domain (or CC0 licensed, at your option.)
-// By Evandro Copercini - 2018
-//
+
 // This example creates a bridge between Serial and Classical Bluetooth (SPP)
 // and also demonstrate that SerialBT have the same functionalities of a normal Serial
 
@@ -73,7 +71,7 @@ void loop()
       Abackward();
       break;
     case 'S':
-      Astop();
+      stopall();
       break;
     case 'R':
       Bright();
@@ -97,8 +95,6 @@ void loop()
       Abackward();
       Bright();
       break;
-    default:
-      break;
     }
   }
   delay(20);
@@ -107,16 +103,15 @@ void loop()
 void Aforward()
 {
 
-  digitalWrite(in3, HIGH);
-  digitalWrite(in4, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
   analogWrite(enB, 255);
 }
 
 void Abackward()
 {
-
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, HIGH);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
   analogWrite(enB, 255);
 }
 
@@ -132,7 +127,7 @@ void Bleft()
 {
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
-  analogWrite(enA, 200);
+  analogWrite(enA, 255);
 }
 
 void Bright()
@@ -140,7 +135,7 @@ void Bright()
 
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-  analogWrite(enA, 200);
+  analogWrite(enA, 255);
 }
 
 void Bstop()
