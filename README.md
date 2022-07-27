@@ -1,6 +1,10 @@
 # car_drift_esp
 Arduino car drift code 
 
+# board use : 
+
+esp32 dev kit v1
+
 # Libraries use : 
 BluetoothSerial
 
